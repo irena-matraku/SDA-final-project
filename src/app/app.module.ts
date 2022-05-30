@@ -7,7 +7,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 
 @NgModule({
   declarations: [
