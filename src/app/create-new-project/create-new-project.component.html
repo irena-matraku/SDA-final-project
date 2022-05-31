@@ -1,5 +1,4 @@
 <!-- Create New Project -->
-
 <div class="create-project container">
     <h1 class="fw-bolder fs-2">Create new project</h1>
     <!-- Project Name -->
@@ -10,7 +9,7 @@
     <!-- Project Description -->
     <div class="project-description">
         <div id="title">Project Description</div>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter project description here">
+        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter project description here">
     </div>
     <!-- Team Members -->
     <div class="team-members">
@@ -43,7 +42,31 @@
           </mat-form-field>
     </div>
     <!-- Status -->
-    
-
-
+    <div id="title">Status</div>
+    <div class="status row">
+        <div class="form-check col-lg-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              To be done
+            </label>
+          </div>
+          <div class="form-check col-lg-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+              In progress
+            </label>
+          </div>
+          <div class="form-check col-lg-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+            <label class="form-check-label" for="flexRadioDefault3">
+              Completed
+            </label>
+          </div>
+    </div>
+    <div class="button col text-center mt-5">
+        <button type="button" class="btn btn-primary create-btn mx-auto">SAVE PROJECT</button>
+    </div>
+</div>
+<div class="container footer mx-auto text-center" style="color: #333 ;">
+    © Software Development Academy 2022
 </div>
