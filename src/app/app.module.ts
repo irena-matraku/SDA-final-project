@@ -7,22 +7,30 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { EditPageComponent } from './tasks/edit-page/edit-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    CreateNewProjectComponent
+    CreateNewProjectComponent,
+    EditPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    MatRadioModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,24 @@
+<div class="edit-page">
+  <mat-card>
+    <mat-card-title>Edit Task</mat-card-title>
+    <form class="edit-task-form">
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Task name</mat-label>
+        <input matInput placeholder="Task name" />
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" />
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-label>Status</mat-label>
+        <div class="radio-group">
+          <mat-radio-button value="todo">To be done</mat-radio-button>
+          <mat-radio-button value="in-progress">In progress</mat-radio-button>
+          <mat-radio-button value="completed">Completed</mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </form>
+  </mat-card>
+</div>
