@@ -19,6 +19,14 @@
           <mat-radio-button value="completed">Completed</mat-radio-button>
         </div>
       </mat-radio-group>
+      <!-- Other fields here -->
+      <mat-form-field appearance="fill" class="date-picker-field">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
     </form>
   </mat-card>
 </div>
