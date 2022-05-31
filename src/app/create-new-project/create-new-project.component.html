@@ -2,14 +2,17 @@
 
 <div class="create-project container">
     <h1 class="fw-bolder fs-2">Create new project</h1>
+    <!-- Project Name -->
     <div class="project-name">
         <div id="title">Project Name</div>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter project name here">
     </div>
+    <!-- Project Description -->
     <div class="project-description">
         <div id="title">Project Description</div>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter project description here">
     </div>
+    <!-- Team Members -->
     <div class="team-members">
         <div id="title">Team Members</div>
         <select class="form-select" aria-label="Default select example">
@@ -20,9 +23,27 @@
             <option value="4">Klaudio B</option>
           </select>
     </div>
+    <!-- Categories -->
     <div class="categories">
-        
-        
-          
+        <div id="title">Categories</div>
+        <mat-form-field class="example-chip-list" appearance="standard">
+            <mat-chip-list #chipList aria-label="Category selection">
+              <mat-chip *ngFor="let category of category" (removed)="remove(category)">
+                {{category.name}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input placeholder="New category..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
     </div>
+    <!-- Status -->
+    
+
+
 </div>

@@ -8,19 +8,39 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Materials Components
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    CreateNewProjectComponent
+    CreateNewProjectComponent,
+
+
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    BrowserAnimationsModule,
+
+    // Materials Modules
+    MatChipsModule,
+    MatFormFieldModule,
+    MatIconModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
