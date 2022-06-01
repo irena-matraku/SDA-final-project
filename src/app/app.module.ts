@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { CreatedProjectComponent } from './created-project/created-project.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 
 
@@ -25,6 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
     NavbarComponent,
     HomepageComponent,
     CreateNewProjectComponent,
+    CreatedProjectComponent,
+    FooterComponent,
 
 
     
