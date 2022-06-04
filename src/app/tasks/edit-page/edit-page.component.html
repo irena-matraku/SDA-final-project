@@ -1,0 +1,51 @@
+<div class="edit-page">
+  <mat-card>
+    <mat-card-title>Edit Task</mat-card-title>
+    <form class="edit-task-form">
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Task name</mat-label>
+        <input matInput placeholder="Task name" />
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="legacy">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" />
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-label>Status</mat-label>
+        <div class="radio-group">
+          <mat-radio-button value="todo">To be done</mat-radio-button>
+          <mat-radio-button value="in-progress">In progress</mat-radio-button>
+          <mat-radio-button value="completed">Completed</mat-radio-button>
+        </div>
+      </mat-radio-group>
+      <mat-form-field appearance="legacy">
+        <mat-label>Assign</mat-label>
+        <select matNativeControl>
+          <option value="Irena">Irena</option>
+          <option value="Paula">Paula</option>
+          <option value="Mario">Mario</option>
+          <option value="Klaudio">Klaudio</option>
+          <option value="Igli">Igli</option>
+
+        </select>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an option">
+        <mat-label>Category</mat-label>
+        <div class="radio-group">
+          <mat-radio-button value="Design">Design</mat-radio-button>
+          <mat-radio-button value="Development">Development</mat-radio-button>
+          <mat-radio-button value="DevOPS">DevOPS</mat-radio-button>
+        </div>
+      </mat-radio-group>
+      <mat-form-field appearance="fill" class="date-picker-field">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+     <div class="button-container"><button class="btn-primary" mat-raised-button color="primary">Save Task</button></div>
+    </form>
+  </mat-card>
+</div>

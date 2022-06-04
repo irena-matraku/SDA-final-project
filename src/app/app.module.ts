@@ -19,10 +19,29 @@ import { FooterComponent } from './core/footer/footer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatSelectModule} from '@angular/material/select';
+import { EditPageComponent } from './tasks/edit-page/edit-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatButtonModule} from '@angular/material/button';
 
+let projects = localStorage.getItem('projects');
+if(projects == null) {
+  const dummyProjects = [
+      {
+          project_id: 1,
+          project_name: 'Hello World' 
+      },
+      {
+          project_id: 1,
+          project_name: 'Hello Moon' 
+      }
+  ];
 
-
-
+  localStorage.setItem('projects', JSON.stringify(dummyProjects));
+}
 
 
 @NgModule({
@@ -33,9 +52,7 @@ import {MatSelectModule} from '@angular/material/select';
     CreateNewProjectComponent,
     CreatedProjectComponent,
     FooterComponent,
-
-
-    
+    EditPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,10 +67,16 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatExpansionModule,
     CdkAccordionModule,
-    MatSelectModule
-    
+    MatSelectModule,
+    MatCardModule,
+    MatInputModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatButtonModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
