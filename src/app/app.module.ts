@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Materials Components
 import {MatChipsModule} from '@angular/material/chips';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule, } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {CreatedProjectComponent } from './projects/created-project/created-project.component';
 import { FooterComponent } from './core/footer/footer.component';
@@ -26,6 +26,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule} from '@angular/forms';
+
+
 
 let projects = localStorage.getItem('projects');
 if(projects == null) {
@@ -53,6 +56,7 @@ if(projects == null) {
     CreatedProjectComponent,
     FooterComponent,
     EditPageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -75,6 +79,9 @@ if(projects == null) {
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
+    ReactiveFormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],

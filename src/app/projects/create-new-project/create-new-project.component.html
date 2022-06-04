@@ -1,26 +1,45 @@
 <!-- Create New Project -->
 <div class="create-project container">
     <h1 class="fw-bolder fs-2">Create new project</h1>
+
     <!-- Project Name -->
     <div class="project-name">
         <div id="title">Project Name</div>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter project name here">
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Enter your project name here</mat-label>
+            <input matInput placeholder="" value="">
+          </mat-form-field>
+        </form>
     </div>
+    
     <!-- Project Description -->
     <div class="project-description">
         <div id="title">Project Description</div>
-        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Enter project description here">
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Enter your project description here</mat-label>
+            <input matInput placeholder="" value="">
+          </mat-form-field>
+        </form>
     </div>
+    
     <!-- Team Members -->
     <div class="team-members">
         <div id="title">Team Members</div>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Select Team Members here</option>
-            <option value="1">Irena Matraku</option>
-            <option value="2">Kamber Peka</option>
-            <option value="3">Igli Maksuti</option>
-            <option value="4">Klaudio B</option>
-          </select>
+        <mat-form-field appearance="standard">
+          <mat-label>Select team members here</mat-label>
+          <mat-select [formControl]="team_members" multiple>
+            <mat-select-trigger>
+              {{team_members.value?.[0] || ''}}
+              <span *ngIf="(team_members.value?.length || 0) > 1" class="example-additional-selection">
+                (+{{(team_members.value?.length || 0) - 1}} {{team_members.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let team_members of team_members_List" [value]="team_members">{{team_members}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
     </div>
     <!-- Categories -->
     <div class="categories">
@@ -43,26 +62,12 @@
     </div>
     <!-- Status -->
     <div id="title">Status</div>
-    <div class="status row">
-        <div class="form-check col-lg-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              To be done
-            </label>
-          </div>
-          <div class="form-check col-lg-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-            <label class="form-check-label" for="flexRadioDefault2">
-              In progress
-            </label>
-          </div>
-          <div class="form-check col-lg-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-            <label class="form-check-label" for="flexRadioDefault3">
-              Completed
-            </label>
-          </div>
-    </div>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">To be done</mat-radio-button>
+      <mat-radio-button value="2">In progress</mat-radio-button>
+      <mat-radio-button value="">Completed</mat-radio-button>
+    </mat-radio-group>
+    
     <div class="button col text-center mt-5">
       <a routerLink="/createdproject"><button type="button" class="btn btn-primary create-btn mx-auto">SAVE PROJECT</button></a>
     </div>
