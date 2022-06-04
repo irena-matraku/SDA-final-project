@@ -16,6 +16,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { CreatedProjectComponent } from './created-project/created-project.component';
 import { FooterComponent } from './core/footer/footer.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -43,7 +47,10 @@ import { FooterComponent } from './core/footer/footer.component';
     // Materials Modules
     MatChipsModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    CdkAccordionModule,
+    MatSelectModule
     
   ],
   providers: [],
