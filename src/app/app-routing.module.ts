@@ -7,7 +7,7 @@ import { TasksCreateComponent } from './pages/tasks/tasks-create/tasks-create.co
 import { TasksIndexComponent } from './pages/tasks/tasks-index/tasks-index.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent},
+  { path: '', component: ProjectIndexComponent},
   { path: 'projects/new', component: ProjectUpsertComponent},
   { path: 'projects/:projectId', component: ProjectIndexComponent},
   { path: 'tasks/:taskId', component: TasksCreateComponent },
