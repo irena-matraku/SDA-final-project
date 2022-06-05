@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import {AfterViewInit,ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+import { Task } from 'src/app/interfaces/task-interface';
+
+
 
 @Component({
-  selector: 'app-tasks-index',
+  selector: 'app-task-index',
   templateUrl: './tasks-index.component.html',
   styleUrls: ['./tasks-index.component.scss']
 })
-export class TasksIndexComponent implements OnInit {
+export class TasksIndexComponent implements AfterViewInit {
+  // viewMode: string = 'table';
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'status', 'assign', 'category'];
+  dataSource = new MatTableDataSource<Task>(ELEMENT_DATA);
 
-  ngOnInit(): void {
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
   }
 
+  // setViewModeHandler(mode: any){
+  //   this.viewMode = mode;
+  // }
+
 }
+
+const ELEMENT_DATA: Task[] = [
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+];

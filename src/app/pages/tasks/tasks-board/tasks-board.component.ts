@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-tasks-board',
+  selector: 'task-board',
   templateUrl: './tasks-board.component.html',
   styleUrls: ['./tasks-board.component.scss']
 })

@@ -1,15 +1,12 @@
-
-
-
 <div class="container">
     <mat-accordion>
-    <mat-expansion-panel class="mat-expantion-panel" >
+    <mat-expansion-panel *ngFor="let project of projects" class="mat-expantion-panel">
       <mat-expansion-panel-header>
         <mat-panel-title class="col-2">
-          SDA Final Project
+          {{ project.title }}
         </mat-panel-title>
         <mat-panel-description class="col-10">
-            <button mat-raised-button color="accent" class="btn-status">In Progress</button>
+            <button mat-raised-button color="accent" class="btn-status">{{ project.status }}</button>
         </mat-panel-description>
       </mat-expansion-panel-header>
       <!-- Project Description -->
@@ -29,10 +26,9 @@
                     <mat-chip color="primary" selected>Design</mat-chip>
                 </div>
                 <div class="col-1">
-                  <a routerLink="/task-board">
-                    <button mat-flat-button color="primary" class="button" style="background-color:#2063E3 ;" >Check Tasks</button>
+                  <a routerLink="/tasks">
+                     <button mat-flat-button color="primary" class="button" style="background-color:#2063E3 ;" >Check Tasks</button>
                   </a>
-                     
                 </div>
             </mat-chip-list>
       

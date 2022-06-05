@@ -9,7 +9,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProjectUpsertComponent } from './pages/projects/project-upsert/project-upsert.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TaskCreateComponent } from './pages/tasks/tasks-create/tasks-create.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TasksCreateComponent } from './pages/tasks/tasks-create/tasks-create.component';
 
 
 
@@ -26,16 +27,19 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule} from '@angular/forms';
-import { TaskEditComponent } from './pages/tasks/tasks-edit/tasks-edit.component';
-import { TasksIndexComponent } from './pages/tasks/tasks-index/tasks-index.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
+import { TasksEditComponent } from './pages/tasks/tasks-edit/tasks-edit.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { ProjectCardComponent } from './shared/cards/project-card/project-card.component';
 import { TaskCardComponent } from './shared/cards/task-card/task-card.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-import { TasksBoardComponent } from './tasks/tasks-board/tasks-board.component';
+import { TasksIndexComponent,} from './pages/tasks/tasks-index/tasks-index.component';
+import { TasksBoardComponent } from './pages/tasks/tasks-board/tasks-board.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
@@ -61,18 +65,18 @@ if(projects == null) {
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    TasksBoardComponent,
+    HeaderComponent,
     ProjectIndexComponent,
     ProjectUpsertComponent,
-    TaskCreateComponent,
+    TasksCreateComponent,
     TasksIndexComponent,
-    TaskEditComponent,
+    TasksEditComponent,
     HeaderComponent,
     ProjectCardComponent,
     TaskCardComponent,
     LoginComponent,
     RegisterComponent,
-    
+    TasksBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,6 +84,8 @@ if(projects == null) {
     NgbModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     // Materials Modules
     MatChipsModule,
@@ -95,10 +101,10 @@ if(projects == null) {
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
     DragDropModule,
     ReactiveFormsModule,
-
-
   ],
   providers: [],
   bootstrap: [AppComponent],

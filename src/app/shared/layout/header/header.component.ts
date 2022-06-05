@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-header',
+  selector: 'task-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
+  viewMode: string = 'table';
 
-  constructor() { }
+  @Output() modeChanged: EventEmitter<string> = new EventEmitter();
 
-  ngOnInit(): void {
+  toppings = new FormControl('');
+
+  toppingList: string[] = ['Klaudio Bendaj', 'Igli Maksuti', 'Irena Matraku', 'Paola Xhindoli', 'Marjo Ceca'];
+
+  setViewMode(mode: string){
+    this.viewMode = mode;
   }
-
 }
