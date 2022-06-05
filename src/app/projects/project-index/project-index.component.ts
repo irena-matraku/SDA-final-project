@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-created-project',
-  templateUrl: './created-project.component.html',
-  styleUrls: ['./created-project.component.scss']
+  templateUrl: './project-index.component.html',
+  styleUrls: ['./project-index.component.scss']
 })
-export class CreatedProjectComponent implements OnInit {
+export class ProjectIndexComponent implements OnInit {
 
   constructor() {
     
