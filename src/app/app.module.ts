@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Materials Components
 import {MatChipsModule} from '@angular/material/chips';
@@ -26,6 +27,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { HeaderComponent } from './tasks/header/header.component';
 
 let projects = localStorage.getItem('projects');
 if(projects == null) {
@@ -53,6 +58,8 @@ if(projects == null) {
     CreatedProjectComponent,
     FooterComponent,
     EditPageComponent,
+    TaskListComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +67,8 @@ if(projects == null) {
     NgbModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     // Materials Modules
     MatChipsModule,
@@ -75,6 +84,9 @@ if(projects == null) {
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
