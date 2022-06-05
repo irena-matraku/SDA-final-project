@@ -24,7 +24,7 @@ export class CreateNewProjectComponent implements OnInit {
 
   team_members = new FormControl('');
 
-  team_members_List: string[] = ['Irena Matraku', 'Paula Xhindoli', 'Klaudi Bendaj', 'Igli Maksuti', 'Marjo Ceca'];
+  team_members_List: string[] = ['Irena Matraku', 'Paula Xhindoli', 'Klaudio Bendaj', 'Igli Maksuti', 'Marjo Ceca'];
   
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
