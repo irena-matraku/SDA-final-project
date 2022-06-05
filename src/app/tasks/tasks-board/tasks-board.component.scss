@@ -64,6 +64,7 @@
       background-color: #37465B;
       border: none;
       color: white;
+      padding: 5px;
   }
   .card-container{
       padding: 10px;
@@ -73,5 +74,8 @@
     background-color: #F7F7F7;
     padding-top: 8px;
     padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
   }
   
