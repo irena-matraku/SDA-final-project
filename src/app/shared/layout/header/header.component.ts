@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
 
-  constructor() { }
+  toppings = new FormControl('');
 
-  ngOnInit(): void {
-  }
+  toppingList: string[] = ['Klaudio Bendaj', 'Igli Maksuti', 'Irena Matraku', 'Paola Xhindoli', 'Marjo Ceca'];
 
 }

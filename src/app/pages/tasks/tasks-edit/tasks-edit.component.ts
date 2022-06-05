@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tasks-edit.component.html',
   styleUrls: ['./tasks-edit.component.scss']
 })
-export class TaskEditComponent implements OnInit {
+export class TasksEditComponent implements OnInit {
 
   constructor() { }
 

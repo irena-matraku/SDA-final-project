@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tasks-create.component.html',
   styleUrls: ['./tasks-create.component.scss']
 })
-export class TaskCreateComponent implements OnInit {
+export class TasksCreateComponent implements OnInit {
 
   constructor() { }
 
