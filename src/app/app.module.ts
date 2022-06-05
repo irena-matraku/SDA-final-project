@@ -39,6 +39,8 @@ import { TaskCardComponent } from './shared/cards/task-card/task-card.component'
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { TasksIndexComponent,} from './pages/tasks/tasks-index/tasks-index.component';
+import { TasksBoardComponent } from './pages/tasks/tasks-board/tasks-board.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 let projects = localStorage.getItem('projects');
@@ -74,7 +76,7 @@ if(projects == null) {
     TaskCardComponent,
     LoginComponent,
     RegisterComponent,
-
+    TasksBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +102,9 @@ if(projects == null) {
     MatSelectModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    DragDropModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

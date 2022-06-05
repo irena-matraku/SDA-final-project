@@ -1,9 +1,9 @@
 
-<app-header></app-header>
+<task-header #taskHeader></task-header>
 
 <div class="container mt-3">
 
-    <div class="mat-elevation-z8">
+    <div *ngIf="taskHeader.viewMode == 'table'" class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
       
           <!-- Position Column -->
@@ -40,5 +40,7 @@
                        class="outer-paginator">
         </mat-paginator>
       </div>
+
+      <task-board *ngIf="taskHeader.viewMode == 'board'"></task-board>
       
 </div>

@@ -35,8 +35,8 @@
           </mat-form-field>
 
           <div class="view-option ">
-            <button mat-raised-button>List View</button>
-            <button mat-raised-button>Board View</button>
+            <button mat-raised-button (click)="setViewMode('table')">List View</button>
+            <button mat-raised-button (click)="setViewMode('board')">Board View</button>
           </div>
     </div>
 

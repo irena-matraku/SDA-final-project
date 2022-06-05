@@ -4,12 +4,15 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Task } from 'src/app/interfaces/task-interface';
 
+
+
 @Component({
   selector: 'app-task-index',
   templateUrl: './tasks-index.component.html',
   styleUrls: ['./tasks-index.component.scss']
 })
 export class TasksIndexComponent implements AfterViewInit {
+  // viewMode: string = 'table';
 
   displayedColumns: string[] = ['name', 'status', 'assign', 'category'];
   dataSource = new MatTableDataSource<Task>(ELEMENT_DATA);
@@ -20,6 +23,10 @@ export class TasksIndexComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
+
+  // setViewModeHandler(mode: any){
+  //   this.viewMode = mode;
+  // }
 
 }
 

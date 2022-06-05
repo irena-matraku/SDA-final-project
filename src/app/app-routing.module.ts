@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { TasksBoardComponent } from './pages/tasks/tasks-board/tasks-board.component';
 import { ProjectUpsertComponent } from './pages/projects/project-upsert/project-upsert.component';
 import { ProjectIndexComponent } from './pages/projects/project-index/project-index.component';
 import { TasksCreateComponent } from './pages/tasks/tasks-create/tasks-create.component';
@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'projects/new', component: ProjectUpsertComponent},
   { path: 'projects/:projectId', component: ProjectIndexComponent},
   { path: 'tasks/:taskId', component: TasksCreateComponent },
-  { path: 'tasks', component: TasksIndexComponent }
+  { path: 'tasks', component: TasksIndexComponent },
+  { path: 'task-board', component: TasksBoardComponent }
 ];
 
 @NgModule({
