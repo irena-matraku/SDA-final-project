@@ -5,11 +5,11 @@ import {MatTableDataSource} from '@angular/material/table';
 import { Task } from 'src/app/interfaces/task-interface';
 
 @Component({
-  selector: 'app-task-list',
-  templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss']
+  selector: 'app-task-index',
+  templateUrl: './tasks-index.component.html',
+  styleUrls: ['./tasks-index.component.scss']
 })
-export class TaskListComponent implements AfterViewInit {
+export class TasksIndexComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['name', 'status', 'assign', 'category'];
   dataSource = new MatTableDataSource<Task>(ELEMENT_DATA);

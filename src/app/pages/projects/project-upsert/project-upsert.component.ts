@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
 import { FormControl } from '@angular/forms';
 
 
@@ -10,12 +10,12 @@ export interface Category {
 
 
 @Component({
-  selector: 'app-create-new-project',
-  templateUrl: './create-new-project.component.html',
-  styleUrls: ['./create-new-project.component.scss']
+  selector: 'app-upsert',
+  templateUrl: './project-upsert.component.html',
+  styleUrls: ['./project-upsert.component.scss']
    
 })
-export class CreateNewProjectComponent implements OnInit {
+export class ProjectUpsertComponent implements OnInit {
 
   constructor() { }
 
