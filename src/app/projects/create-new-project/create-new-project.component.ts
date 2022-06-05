@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { FormControl } from '@angular/forms';
+
 
 export interface Category {
   name: string;
@@ -20,6 +22,9 @@ export class CreateNewProjectComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  team_members = new FormControl('');
+
+  team_members_List: string[] = ['Irena Matraku', 'Paula Xhindoli', 'Klaudio Bendaj', 'Igli Maksuti', 'Marjo Ceca'];
   
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
