@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProjectUpsertComponent } from './projects/project-upsert/project-upsert.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,13 +28,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule} from '@angular/forms';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { TaskEditComponent } from './tasks/tasks-edit/tasks-edit.component';
 import { TasksIndexComponent } from './tasks/tasks-index/tasks-index.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
-import { ProjectCardComponent } from './cards/project-card/project-card.component';
-import { TaskCardComponent } from './cards/task-card/task-card.component';
+import { ProjectCardComponent } from './shared/cards/project-card/project-card.component';
+import { TaskCardComponent } from './shared/cards/task-card/task-card.component';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { RegisterComponent } from './pages/auth/register/register.component';
 
 
 
@@ -60,8 +60,6 @@ if(projects == null) {
     AppComponent,
     NavbarComponent,
     HomepageComponent,
-    LoginComponent,
-    RegisterComponent,
     ProjectIndexComponent,
     ProjectUpsertComponent,
     TaskCreateComponent,
@@ -69,7 +67,10 @@ if(projects == null) {
     TaskEditComponent,
     HeaderComponent,
     ProjectCardComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    LoginComponent,
+    RegisterComponent,
+    
     
   ],
   imports: [
