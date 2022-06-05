@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'projects/new', component: CreateNewProjectComponent},
   { path: 'projects/:projectId', component: CreatedProjectComponent},
   { path: 'tasks/:taskId', component: EditTaskPage },
-  { path: 'task-list', component: TaskListComponent }
+  { path: 'tasks', component: TaskListComponent }
 
 ];
 
