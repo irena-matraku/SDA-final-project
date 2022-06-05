@@ -26,6 +26,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
+import { TasksBoardComponent } from './tasks/tasks-board/tasks-board.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 let projects = localStorage.getItem('projects');
 if(projects == null) {
@@ -53,6 +55,7 @@ if(projects == null) {
     CreatedProjectComponent,
     FooterComponent,
     EditPageComponent,
+    TasksBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,7 @@ if(projects == null) {
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

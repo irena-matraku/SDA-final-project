@@ -4,12 +4,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CreateNewProjectComponent } from './create-new-project/create-new-project.component';
 import { CreatedProjectComponent } from './created-project/created-project.component';
 import { EditPageComponent as EditTaskPage } from './tasks/edit-page/edit-page.component';
+import { TasksBoardComponent } from './tasks/tasks-board/tasks-board.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent},
   { path: 'projects/new', component: CreateNewProjectComponent},
   { path: 'projects/:projectId', component: CreatedProjectComponent},
-  { path: 'tasks/:taskId', component: EditTaskPage }
+  { path: 'tasks/:taskId', component: EditTaskPage },
+  {path: 'task-board', component:TasksBoardComponent}
 ];
 
 @NgModule({
