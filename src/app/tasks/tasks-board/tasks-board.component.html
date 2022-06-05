@@ -1,61 +1,110 @@
 <div class="container">
-    <div cdkDropListGroup>
-        <div class="example-container">
-          <h2>To do</h2>
-          <div
-            cdkDropList
-            [cdkDropListData]="todo"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-          </div>
+  <div cdkDropListGroup>
+    <div class="example-container">
+      <h2>Backlog</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="backlog"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of backlog" cdkDrag>
+          {{ item }}
         </div>
-      
-        <div class="example-container">
-          <h2>Done</h2>
-      
-          <div
-            cdkDropList
-            [cdkDropListData]="done"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of done" cdkDrag>
-                <div class="card">
-                <h4>Task name: <b>{{item}}</b></h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, earum dolor incidunt </p>
-                <div class="card-bottom">
-                    <p><b>Irena Matraku</b></p>
-                    <button type="button" class="rounded-pill">Category</button>
-                </div>
-            </div>
-        </div>
-          </div>
-        </div>
-
-        <div class="example-container">
-            <h2>In progress</h2>
-        
-            <div
-              cdkDropList
-              [cdkDropListData]="done"
-              class="example-list"
-              (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-            </div>
-          </div>
-
-          <div class="example-container">
-            <h2>Completed</h2>
-        
-            <div
-              cdkDropList
-              [cdkDropListData]="done"
-              class="example-list"
-              (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-            </div>
-          </div>
       </div>
-</div>
+    </div>
 
-  
+    <div class="example-container">
+      <h2>To be done</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+          <div class="card">
+            <div class="card-container">
+              <h4>
+                <b>{{ item }}</b>
+              </h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, earum dolor incidunt
+              </p>
+              <div class="card-bottom">
+                <p><b>Irena Matraku</b></p>
+                <button type="button" class="rounded-pill btn-cards">
+                  Category
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>In progress</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="in_progress"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of in_progress" cdkDrag>
+          <div class="card">
+            <div class="card-container">
+              <h4>
+                <b>{{ item }}</b>
+              </h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, earum dolor incidunt
+              </p>
+              <div class="card-bottom">
+                <p><b>Irena Matraku</b></p>
+                <button type="button" class="rounded-pill btn-cards">
+                  Category
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-container">
+      <h2>Completed</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="completed"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-box" *ngFor="let item of completed" cdkDrag>
+          <div class="card">
+            <div class="card-container">
+              <h4>
+                <b>{{ item }}</b>
+              </h4>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat, earum dolor incidunt
+              </p>
+              <div class="card-bottom">
+                <p><b>Irena Matraku</b></p>
+                <button type="button" class="rounded-pill btn-cards">
+                  Category
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

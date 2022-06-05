@@ -10,9 +10,16 @@ export class TasksBoardComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  backlog = ['Fall asleep'];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  done = ['Get up', 'Walk dog'];
+
+  in_progress = ['Get up', ' teeth', ' a shower', 'Check e-mail', 'Walk dog'];
+
+  completed = [' up', 'Brush teeth', 'Take a shower', ' e-mail', ' dog'];
+
+
+
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
