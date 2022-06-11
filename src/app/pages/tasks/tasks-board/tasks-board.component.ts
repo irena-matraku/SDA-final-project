@@ -32,7 +32,7 @@ statuses: any = [];
   };
 
 
-  backlog = ['Fall asleep'];
+  // backlog = ['Fall asleep'];
 
   done = ['Get up', 'Walk dog'];
 
