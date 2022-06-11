@@ -7,27 +7,27 @@
         <table mat-table [dataSource]="dataSource">
       
           <!-- Position Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
           </ng-container>
       
           <!-- Name Column -->
+          <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef> Category </th>
+            <td mat-cell *matCellDef="let element"> {{element.category.name }} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
           <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
             <td mat-cell *matCellDef="let element"> {{element.status}} </td>
           </ng-container>
       
-          <!-- Weight Column -->
-          <ng-container matColumnDef="assign">
-            <th mat-header-cell *matHeaderCellDef> Assign </th>
-            <td mat-cell *matCellDef="let element"> {{element.assign}} </td>
-          </ng-container>
-      
           <!-- Symbol Column -->
-          <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef> Category </th>
-            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+          <ng-container matColumnDef="member">
+            <th mat-header-cell *matHeaderCellDef> Member </th>
+            <td mat-cell *matCellDef="let element"> {{element.member.name }} </td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -41,6 +41,6 @@
         </mat-paginator>
       </div>
 
-      <task-board *ngIf="taskHeader.viewMode == 'board'"></task-board>
+      <task-board *ngIf="taskHeader.viewMode == 'board'" [tasks]="tasks"></task-board>
       
 </div>
