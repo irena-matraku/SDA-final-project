@@ -1,4 +1,3 @@
-
 <task-header #taskHeader></task-header>
 
 <div class="container mt-3">
@@ -6,13 +5,19 @@
     <div *ngIf="taskHeader.viewMode == 'table'" class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
       
-          <!-- Position Column -->
+          <!-- Id Column -->
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> Id </th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
           </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.title }} </td>
+            </ng-container>
       
-          <!-- Name Column -->
+          <!-- Category Column -->
           <ng-container matColumnDef="category">
             <th mat-header-cell *matHeaderCellDef> Category </th>
             <td mat-cell *matCellDef="let element"> {{element.category.name }} </td>
@@ -28,6 +33,14 @@
           <ng-container matColumnDef="member">
             <th mat-header-cell *matHeaderCellDef> Member </th>
             <td mat-cell *matCellDef="let element"> {{element.member.name }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element"> 
+            <a routerLink="/tasks/{{element.id}}" class="btn btn outline-warning"><mat-icon>edit</mat-icon></a>	
+              <mat-icon>delete</mat-icon>   
+            </td>
           </ng-container>
       
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

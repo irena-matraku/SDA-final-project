@@ -20,7 +20,7 @@ export class TasksIndexComponent implements AfterViewInit {
   // viewMode: string = 'table';
 
   // displayedColumns: string[] = ['name', 'status', 'assign', 'category', 'edit'];
-  displayedColumns: string[] = ['id', 'category', 'status', 'member'];
+  displayedColumns: string[] = ['id','title', 'category', 'status', 'member','action'];
   dataSource: any;
 
   @ViewChild(MatPaginator)

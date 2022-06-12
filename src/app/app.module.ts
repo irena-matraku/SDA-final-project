@@ -25,9 +25,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 import { TasksEditComponent } from './pages/tasks/tasks-edit/tasks-edit.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
@@ -37,7 +40,6 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { TasksIndexComponent } from './pages/tasks/tasks-index/tasks-index.component';
 import { TasksBoardComponent } from './pages/tasks/tasks-board/tasks-board.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 
 let projects = localStorage.getItem('projects');
 if (projects == null) {
@@ -100,6 +102,7 @@ if (projects == null) {
     MatPaginatorModule,
     DragDropModule,
     ReactiveFormsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
