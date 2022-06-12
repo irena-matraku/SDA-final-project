@@ -1,0 +1,40 @@
+
+// create project
+
+.create-project {
+    background-color: #F7F7F7;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    padding: 2rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+}
+
+.example-form {
+    width: 100%;
+}
+  
+mat-form-field {
+    width: 100%;
+}
+
+#title {
+    font-weight: 550;
+    font-size: 1.2rem;
+    margin: 2rem 0 2rem 0;
+    color: #333;
+}
+
+.create-btn{
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1.25px;
+    font-style: normal;
+    line-height: 36px;
+    background-color: #2063E3;
+    margin-top: 2rem;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 1.2rem;
+}
