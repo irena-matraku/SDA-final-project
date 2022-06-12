@@ -1,35 +1,55 @@
 <div class="edit-page container">
   <mat-card>
-    <mat-card-title>Edit Task</mat-card-title>
+    <mat-card-title>
+      {{ this.task ? "Edit task" : "New task" }}
+    </mat-card-title>
     <form class="edit-task-form">
       <mat-form-field class="full-width" appearance="legacy">
         <mat-label>Task name</mat-label>
-        <input matInput placeholder="Task name" />
+        <input
+          [(ngModel)]="this.name"
+          name="title"
+          matInput
+          placeholder="Task name"
+        />
       </mat-form-field>
       <mat-form-field class="full-width" appearance="legacy">
         <mat-label>Description</mat-label>
-        <input matInput placeholder="Description" />
+        <input
+          [(ngModel)]="this.description"
+          matInput
+          placeholder="Description"
+          name="description"
+        />
       </mat-form-field>
 
-      <mat-radio-group aria-label="Select an option">
+      <mat-radio-group
+        [(ngModel)]="this.status"
+        name="status"
+        aria-label="Select an option"
+      >
         <mat-label>Status</mat-label>
         <div class="radio-group">
-          <mat-radio-button value="todo">To be done</mat-radio-button>
-          <mat-radio-button value="in-progress">In progress</mat-radio-button>
-          <mat-radio-button value="completed">Completed</mat-radio-button>
+          <mat-radio-button value="To be done">To be done</mat-radio-button>
+          <mat-radio-button value="In progress">In progress</mat-radio-button>
+          <mat-radio-button value="Completed">Completed</mat-radio-button>
         </div>
       </mat-radio-group>
+
       <mat-form-field appearance="legacy">
         <mat-label>Assign</mat-label>
-        <select matNativeControl>
-          <option value="Irena">Irena</option>
-          <option value="Paula">Paula</option>
-          <option value="Mario">Mario</option>
-          <option value="Klaudio">Klaudio</option>
-          <option value="Igli">Igli</option>
+        <select [(ngModel)]="this.userId" name="member" matNativeControl>
+          <option *ngFor="let member of this.users" value="{{ member.id }}">
+            {{ member.name }} {{ member.lastName }}
+          </option>
         </select>
       </mat-form-field>
-      <mat-radio-group aria-label="Select an option">
+
+      <mat-radio-group
+        [(ngModel)]="this.categoryName"
+        name="category"
+        aria-label="Select an option"
+      >
         <mat-label>Category</mat-label>
         <div class="radio-group">
           <mat-radio-button value="Design">Design</mat-radio-button>
@@ -37,15 +57,26 @@
           <mat-radio-button value="DevOPS">DevOPS</mat-radio-button>
         </div>
       </mat-radio-group>
+
       <mat-form-field appearance="fill" class="date-picker-field">
         <mat-label>Date</mat-label>
-        <input matInput [matDatepicker]="picker" />
+        <input
+          [(ngModel)]="this.date"
+          name="date"
+          matInput
+          [matDatepicker]="picker"
+        />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <div class="button-container">
-        <button class="btn-primary" mat-raised-button color="primary">
+        <button
+          class="btn-primary"
+          mat-raised-button
+          color="primary"
+          (click)="this.handleSave()"
+        >
           Save Task
         </button>
       </div>

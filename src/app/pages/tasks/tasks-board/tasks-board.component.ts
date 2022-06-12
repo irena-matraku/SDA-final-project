@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Input } from '@angular/core';
+import { Tasks } from 'src/app/models/interfaces/task';
+import { Status } from 'src/app/models/enum/status';
 
 @Component({
   selector: 'task-board',
@@ -7,10 +10,29 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./tasks-board.component.scss']
 })
 export class TasksBoardComponent implements OnInit{
-  ngOnInit(): void {
+@Input() tasks: Tasks = [];
+grouppedTasks: any;
+statuses: any = [];
+
+  constructor(){
+    
   }
 
-  backlog = ['Fall asleep'];
+  ngOnInit(): void {
+    this.statuses = Object.values(Status);
+    this.grouppedTasks = this.groupBy(this.tasks, 'status');
+    console.log(this.grouppedTasks);
+  }
+
+  groupBy = function(xs: any, key: any) {
+    return xs.reduce(function(rv: any, x: any) {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  };
+
+
+  // backlog = ['Fall asleep'];
 
   done = ['Get up', 'Walk dog'];
 

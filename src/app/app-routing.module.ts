@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'projects/new', component: ProjectUpsertComponent},
   { path: 'projects/:projectId', component: ProjectIndexComponent},
   { path: 'tasks/:taskId', component: TasksCreateComponent },
+  { path: 'tasks/create', component: TasksCreateComponent },
   { path: 'tasks', component: TasksIndexComponent },
   { path: 'task-board', component: TasksBoardComponent },
   { path: 'login', component: LoginComponent },

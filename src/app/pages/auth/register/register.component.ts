@@ -18,7 +18,6 @@ export class RegisterComponent implements OnInit {
   public showPassword: boolean = false;
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
@@ -27,7 +26,6 @@ export class RegisterComponent implements OnInit {
   }
 
 }
-
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

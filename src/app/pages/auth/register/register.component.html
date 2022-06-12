@@ -10,20 +10,17 @@
     <div class="signup">
         <h1>SIGN UP TO TASKR.IO</h1>
         <p>Already a member?<a routerLink="/login"> Log In</a></p>
-
         <form class="register-form">
             <div class="personal-info">
                 <mat-form-field appearance="fill" class="example-divide">
                     <mat-label>Name</mat-label>
                     <input matInput placeholder="Input name" >
                   </mat-form-field>
-
                 <mat-form-field appearance="fill">
                     <mat-label>Lastname</mat-label>
                     <input matInput placeholder="Input lastname">
                 </mat-form-field>
             </div>
-
             <div class="other">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Email</mat-label>
@@ -37,7 +34,6 @@
                     </mat-error>
                 </mat-form-field>
                 <br>
-
                   <mat-form-field class="example-full-width" appearance="fill">
                         <mat-label>Password</mat-label>
                         <input matInput [type]="showPassword ? 'text' : 'password'" [formControl]="passwordFormControl" name="password"  placeholder="Input password" required>
