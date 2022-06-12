@@ -9,17 +9,7 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ProjectIndexComponent implements OnInit {
 
-  // statuses = Status;
 
-  // getClass(status:any){
-  //   if(status === status.TO_BE_DONE)
-  //   return 'btn-red';
-  //   else if (status === status.IN_PROGRESS)
-  //   return 'btn-orange';
-  //   else if (status === status.COMPLETED)
-  //   return 'btn-green';
-  //   else return 'other';
-  // }
 
   projectService: ProjectService;
   projects:any;//: Projects;

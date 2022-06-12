@@ -39,13 +39,12 @@
         <div id="title">Team Members</div>
         <mat-form-field appearance="fill">
           <mat-label>Assign</mat-label>
-          <select [(ngModel)]="this.userId" name="member" matNativeControl>
-            <option *ngFor="let member of this.users" value="{{ member.id }}">
+          <mat-select [formControl]="team_members" multiple>
+            <mat-option *ngFor="let member of this.users" value="{{ member.id }}">
               {{ member.name }} {{ member.lastName }}
-            </option>
-          </select>
-        </mat-form-field>
-       
+            </mat-option>
+          </mat-select>
+        </mat-form-field>       
     </div>
     <!-- Categories -->
     <div class="categories">

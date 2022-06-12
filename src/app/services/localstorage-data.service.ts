@@ -17,38 +17,30 @@ export class LocalStorageDataService {
    * @deprecated
    */
   initialize(): void {
-    const projects = [
-      {
-        id: 1,
-        title: 'Fix mobile login page',
-        description: 'bla bla bla bla bla bla bla',
-        categories: 'Design',
-        status: 'To be done'
-      },
-      {
-        id: 2,
-        title: 'Second bla bla bla',
-        description: 'Revogar credenciais para equipe de infra',
-        categories: 'Development',
-        status: Status.IN_PROGRESS,
-      },
-    ];
 
     if(localStorage.getItem('dummyDataLoaded') != '1') {
       const projects = [
         {
           id: 1,
           title: 'Fix mobile login page',
-          description: 'bla bla bla bla bla bla bla',
+          description: 'This is a short description of the project',
           categories: 'Design',
-          status: 'To be done',
+          status: Status.TO_BE_DONE,
         },
         {
           id: 2,
-          title: 'Second bla bla bla',
+          title: 'App Certificate update',
           description: 'Revogar credenciais para equipe de infra',
           categories: 'Development',
+          members: 'team_members',
           status: Status.IN_PROGRESS,
+        },
+        {
+          id: 3,
+          title: 'iOS App Small fixes',
+          description: 'Revogar credenciais para equipe de infra',
+          categories: 'Development',
+          status: Status.COMPLETED,
         },
       ];
   
