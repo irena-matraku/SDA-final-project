@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Role } from '../models/enum/role';
 import { Status } from '../models/enum/status';
 import { ProjectKey, Projects } from '../models/interfaces/project';
@@ -161,6 +162,15 @@ export class LocalStorageDataService {
     }
 
     this.set(items);
+  }
+
+
+  delete(id: number){
+    let items = this.all();
+
+    const filtered = items.filter((item: any) => item.id !== id);
+
+    this.set(filtered);
   }
 
   private set(items: any): void {

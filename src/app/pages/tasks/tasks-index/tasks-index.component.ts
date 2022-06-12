@@ -38,6 +38,10 @@ export class TasksIndexComponent implements AfterViewInit {
     
   }
 
+  delete(id: number){
+    this.taskService.delete(id);
+  }
+
   // setViewModeHandler(mode: any){
   //   this.viewMode = mode;
   // }
