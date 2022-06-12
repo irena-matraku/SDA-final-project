@@ -1,0 +1,17 @@
+<div class="container">
+  <div cdkDropListGroup>
+    <div class="example-container col-3" *ngFor="let group of statuses">
+      <h2>{{ group }}</h2>
+      <div
+        cdkDropList
+        [cdkDropListData]="group.key"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)"
+      >
+      <div class="example-box" *ngFor="let item of grouppedTasks[group]" cdkDrag>
+        {{ item.title }}
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<!-- Create New Project -->
+<div class="create-project container">
+    <h1 class="fw-bolder fs-2">Create new project</h1>
+
+    <!-- Project Name -->
+    <div class="project-name">
+        <div id="title">Project Name</div>
+          <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Enter your project name here</mat-label>
+            <input  
+            [(ngModel)]="this.name"
+            name="title"
+            matInput
+            placeholder="Project name" 
+            />
+          </mat-form-field>
+        </form>
+    </div>
+    
+    <!-- Project Description -->
+    <div class="project-description">
+        <div id="title">Project Description</div>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Enter your project description here</mat-label>
+            <input 
+            [(ngModel)]="this.description"
+            matInput
+            placeholder="Description"
+            name="description"
+            />
+          </mat-form-field>
+        </form>
+    </div>
+    
+    <!-- Team Members -->
+    <div class="team-members">
+        <div id="title">Team Members</div>
+        <mat-form-field appearance="fill">
+          <mat-label>Assign</mat-label>
+          <mat-select [formControl]="team_members" multiple>
+            <mat-option *ngFor="let member of this.users" value="{{ member.id }}">
+              {{ member.name }} {{ member.lastName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>       
+    </div>
+    <!-- Categories -->
+    <div class="categories">
+        <div id="title">Categories</div>
+        <mat-form-field class="example-chip-list" appearance="standard">
+            <mat-chip-list #chipList aria-label="Category selection"
+            [(ngModel)]="this.categoryName"
+            name="categories">
+              <mat-chip *ngFor="let category of category" (removed)="remove(category)">
+                {{category.name}}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input placeholder="New category..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+          </mat-form-field>
+    </div>
+    <!-- Status -->
+    <div id="title">Status</div>
+    <mat-radio-group 
+        [(ngModel)]="this.status"
+        name="status"
+        aria-label="Select an option"
+    >
+      <mat-radio-button value="To be done">To be done</mat-radio-button>
+      <mat-radio-button value="In progress">In progress</mat-radio-button>
+      <mat-radio-button value="Completed">Completed</mat-radio-button>
+    </mat-radio-group>
+    
+    <div class="button col text-center mt-5">
+      <a routerLink="/projects/:projectsId"><button
+          class="btn-primary"
+          mat-raised-button
+          color="primary"
+          (click)="this.handleSave()"
+        type="button" class="btn btn-primary create-btn mx-auto">SAVE PROJECT</button></a>
+    </div>
+</div>
+<div class="container footer mx-auto text-center" style="color: #333 ;">
+    © Software Development Academy 2022
+</div>

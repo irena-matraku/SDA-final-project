@@ -1,0 +1,70 @@
+<div *ngIf="projects.length == 0">
+  <div class="fw-bolder fs-2 homepage-section">My Projects</div>
+  <div class="center-content">
+    <p class="fs-3 fw-lighter d-flex justify-content-center">
+      You don’t have any projects. <br />
+      Do you want to create one?
+    </p>
+    <div class="d-flex justify-content-center">
+      <a routerLink="/projects/new">
+        <button type="button" class="btn btn-primary create-btn">
+          + CREATE PROJECT
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+<div *ngIf="projects.length > 0" class="container">
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let project of projects"
+      class="mat-expantion-panel"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title class="col-2">
+          {{ project.title }}
+        </mat-panel-title>
+        <mat-panel-description class="col-10">
+          <button
+            mat-raised-button
+            color="accent"
+            [ngClass]="['btn-status', project.statusColor]"
+          >
+            {{ project.status }}
+          </button>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- Project Description -->
+      <p>{{ project.description }}</p>
+
+      <!-- Team members -->
+      <div *ngIf="team_members">
+        <h3 class="fw-bold">Team Members</h3>
+        <p *ngFor="let member of team_members_List">
+          {{team_members_List}}
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <mat-chip-list aria-label="Categories">
+        <div class="col-11">
+          <mat-chip color="primary" selected>Development</mat-chip>
+          <mat-chip color="primary" selected>DevOps</mat-chip>
+          <mat-chip color="primary" selected>Design</mat-chip>
+        </div>
+        <div class="col-1">
+          <a routerLink="/tasks">
+            <button
+              mat-flat-button
+              color="primary"
+              class="button"
+              style="background-color: #2063e3"
+            >
+              Check Tasks
+            </button>
+          </a>
+        </div>
+      </mat-chip-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
