@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { FormControl } from '@angular/forms';
+import { Users } from 'src/app/models/interfaces/user';
+import { Status } from 'src/app/models/enum/status';
+import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectService } from 'src/app/services/project.service';
+import { UserService } from 'src/app/services/user.service';
+import { Project } from 'src/app/models/interfaces/project';
 
 
 export interface Category {
@@ -16,10 +23,64 @@ export interface Category {
    
 })
 export class ProjectUpsertComponent implements OnInit {
+  projectId: string | null = null;
+  users: Users = [];
+  
+  name: string = '';
+  description: string = '';
+  userId: string = '';
+  categoryName: string = '';
+  status: Status = Status.TO_BE_DONE;
+  project: any;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private projectService: ProjectService,
+    private userService: UserService
+  ) { }
+
+  ngOnInit() {
+    this.users = this.userService.all();
+
+    this.route.params.subscribe((params) => {
+      this.projectId = params['projectId'];
+      if (this.projectId && this.projectId !== 'new') {
+        this.project = this.projectService.get(Number(this.projectId));
+
+        if (this.project) {
+          this.name = this.project.title;
+          this.description = this.project.description;
+          this.userId = String(this.project.member.id);
+          this.categoryName = this.project.categories.name;
+          this.status = this.project.status;
+        }
+      }
+    });
+  }
+
+  handleSave() {
+    const selectedUser = this.users.find((u) => u.id === Number(this.userId));
+    if(!selectedUser) return;
+
+    const newProject: Project = {
+      id: Date.now(),
+      title: this.name,
+      description: this.description,
+      members: [selectedUser],
+      categories: { name: this.categoryName },
+      status: this.status,
+      // tasks: []
+    };
+
+    if(this.project) {
+      this.projectService.update(this.project.id, { ...newProject, id: this.project.id});
+    } else {
+      this.projectService.create(newProject)
+    }
+
+    this.router.navigateByUrl('/projects')
   }
 
   team_members = new FormControl('');

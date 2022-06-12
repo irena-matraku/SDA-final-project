@@ -23,7 +23,7 @@ export class LocalStorageDataService {
         title: 'Fix mobile login page',
         description: 'bla bla bla bla bla bla bla',
         categories: 'Design',
-        status: 'To be done',
+        status: 'To be done'
       },
       {
         id: 2,
@@ -42,6 +42,38 @@ export class LocalStorageDataService {
         email: 'paula@test.com',
         password: 'test',
         role: Role.ADMINISTRATOR,
+      },
+      {
+        id: 1,
+        name: 'Irena',
+        lastName: 'Matraku',
+        email: 'irena@test.com',
+        password: 'test',
+        role: Role.ADMINISTRATOR,
+      },
+      {
+        id: 2,
+        name: 'Marjo',
+        lastName: 'Ceca',
+        email: 'Marjo@test.com',
+        password: 'test',
+        role: Role.MEMBER,
+      },
+      {
+        id: 3,
+        name: 'Klaudio',
+        lastName: 'Bendaj',
+        email: 'igli@test.com',
+        password: 'test',
+        role: Role.ADMINISTRATOR,
+      },
+      {
+        id: 4,
+        name: 'Igli',
+        lastName: 'Maksuti',
+        email: 'igli@test.com',
+        password: 'test',
+        role: Role.MEMBER,
       },
     ];
 
