@@ -55,6 +55,15 @@ export class LocalStorageDataService {
         description: 'Task description',
         title: 'First task',
       },
+      {
+        id: 2,
+        category: { name: 'Development' },
+        status: Status.TO_BE_DONE,
+        member: users[0],
+        date: new Date(),
+        description: 'Task description',
+        title: 'Second task',
+      },
     ];
 
     localStorage.setItem(ProjectKey, JSON.stringify(projects));
