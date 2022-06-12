@@ -11,6 +11,13 @@ export interface Task {
   categories: Category;
   date: Date;
 
+  // name: string;
+  // status: string;
+  // assign: string;
+  // category: string;
+  // dateCreated:string;
+  // lastModified:string;
+
 }
 
 export type Tasks = Array<Task>;

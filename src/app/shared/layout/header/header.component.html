@@ -35,8 +35,10 @@
           </mat-form-field>
 
           <div class="view-option ">
-            <button mat-raised-button (click)="setViewMode('table')">List View</button>
-            <button mat-raised-button (click)="setViewMode('board')">Board View</button>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="options">
+              <mat-button-toggle (click)="setViewMode('table')" value="table">List View</mat-button-toggle>
+              <mat-button-toggle (click)="setViewMode('board')" value="board">Board View</mat-button-toggle>
+            </mat-button-toggle-group>
           </div>
     </div>
 

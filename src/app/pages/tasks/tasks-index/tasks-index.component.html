@@ -1,46 +1,67 @@
-
 <task-header #taskHeader></task-header>
 
 <div class="container mt-3">
 
-    <div *ngIf="taskHeader.viewMode == 'table'" class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
-      
-          <!-- Position Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-      
-          <!-- Name Column -->
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-          </ng-container>
-      
-          <!-- Weight Column -->
-          <ng-container matColumnDef="assign">
-            <th mat-header-cell *matHeaderCellDef> Assign </th>
-            <td mat-cell *matCellDef="let element"> {{element.assign}} </td>
-          </ng-container>
-      
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef> Category </th>
-            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-          </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                       showFirstLastButtons 
-                       aria-label="Select page of periodic elements"
-                       class="outer-paginator">
-        </mat-paginator>
-      </div>
+  <div *ngIf="taskHeader.viewMode == 'table'" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
 
-      <task-board *ngIf="taskHeader.viewMode == 'board'"></task-board>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <!-- Assign Column -->
+      <ng-container matColumnDef="assign">
+        <th mat-header-cell *matHeaderCellDef> Assign </th>
+        <td mat-cell *matCellDef="let element"> {{element.assign}} </td>
+      </ng-container>
+
+      <!-- Category Column -->
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef> Category </th>
+        <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+      </ng-container>
+
+      <!-- Date Created Column -->
+
+      <ng-container matColumnDef="dateCreated">
+        <th mat-header-cell *matHeaderCellDef> Date Created </th>
+        <td mat-cell *matCellDef="let element"> {{element.dateCreated}} </td>
+      </ng-container>
+
+      <!-- Last Modified Column -->
+
+      <ng-container matColumnDef="lastModified">
+        <th mat-header-cell *matHeaderCellDef> Last Modified </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastModified}} </td>
+      </ng-container>
+
+      <!-- Action Task Column -->
       
+      <ng-container  matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon>edit</mat-icon>
+          <mat-icon>delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements"
+      class="outer-paginator">
+    </mat-paginator>
+  </div>
+
+  <task-board *ngIf="taskHeader.viewMode == 'board'"></task-board>
+
 </div>

@@ -14,7 +14,7 @@ import { Task } from 'src/app/interfaces/task-interface';
 export class TasksIndexComponent implements AfterViewInit {
   // viewMode: string = 'table';
 
-  displayedColumns: string[] = ['name', 'status', 'assign', 'category'];
+  displayedColumns: string[] = ['name', 'status', 'assign', 'category','dateCreated','lastModified',];
   dataSource = new MatTableDataSource<Task>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator)
@@ -31,13 +31,13 @@ export class TasksIndexComponent implements AfterViewInit {
 }
 
 const ELEMENT_DATA: Task[] = [
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
-  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
+  {name: 'iirena', status: 'Hydrogen', assign: '1.0079', category: 'H',dateCreated:'date',lastModified:'date'},
 ];
