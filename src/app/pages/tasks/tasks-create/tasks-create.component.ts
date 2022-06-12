@@ -53,9 +53,9 @@ export class TasksCreateComponent implements OnInit {
   handleSave() {
     const selectedUser = this.users.find((u) => u.id === Number(this.userId));
     if (!selectedUser) return;
-
+    
     const newTask: Task = {
-      id: Date.now(), // random ID
+      id: Math.max(...this.taskService.all().map((t: any) => t.id))+1, // random ID
       title: this.name,
       description: this.description,
       status: this.status,

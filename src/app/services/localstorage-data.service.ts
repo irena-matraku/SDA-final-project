@@ -34,73 +34,93 @@ export class LocalStorageDataService {
       },
     ];
 
-    const users: Users = [
-      {
-        id: 0,
-        name: 'Paula',
-        lastName: 'Xhindoli',
-        email: 'paula@test.com',
-        password: 'test',
-        role: Role.ADMINISTRATOR,
-      },
-      {
-        id: 1,
-        name: 'Irena',
-        lastName: 'Matraku',
-        email: 'irena@test.com',
-        password: 'test',
-        role: Role.ADMINISTRATOR,
-      },
-      {
-        id: 2,
-        name: 'Marjo',
-        lastName: 'Ceca',
-        email: 'Marjo@test.com',
-        password: 'test',
-        role: Role.MEMBER,
-      },
-      {
-        id: 3,
-        name: 'Klaudio',
-        lastName: 'Bendaj',
-        email: 'igli@test.com',
-        password: 'test',
-        role: Role.ADMINISTRATOR,
-      },
-      {
-        id: 4,
-        name: 'Igli',
-        lastName: 'Maksuti',
-        email: 'igli@test.com',
-        password: 'test',
-        role: Role.MEMBER,
-      },
-    ];
-
-    const tasks: Tasks = [
-      {
-        id: 1,
-        category: { name: 'Development' },
-        status: Status.IN_PROGRESS,
-        member: users[0],
-        date: new Date(),
-        description: 'Task description',
-        title: 'First task',
-      },
-      {
-        id: 2,
-        category: { name: 'Development' },
-        status: Status.TO_BE_DONE,
-        member: users[0],
-        date: new Date(),
-        description: 'Task description',
-        title: 'Second task',
-      },
-    ];
-
-    localStorage.setItem(ProjectKey, JSON.stringify(projects));
-    localStorage.setItem(TasksKey, JSON.stringify(tasks));
-    localStorage.setItem(UsersKey, JSON.stringify(users));
+    if(localStorage.getItem('dummyDataLoaded') != '1') {
+      const projects = [
+        {
+          id: 1,
+          title: 'Fix mobile login page',
+          description: 'bla bla bla bla bla bla bla',
+          categories: 'Design',
+          status: 'To be done',
+        },
+        {
+          id: 2,
+          title: 'Second bla bla bla',
+          description: 'Revogar credenciais para equipe de infra',
+          categories: 'Development',
+          status: Status.IN_PROGRESS,
+        },
+      ];
+  
+        const users: Users = [
+          {
+            id: 0,
+            name: 'Paula',
+            lastName: 'Xhindoli',
+            email: 'paula@test.com',
+            password: 'test',
+            role: Role.ADMINISTRATOR,
+          },
+          {
+            id: 1,
+            name: 'Irena',
+            lastName: 'Matraku',
+            email: 'irena@test.com',
+            password: 'test',
+            role: Role.ADMINISTRATOR,
+          },
+          {
+            id: 2,
+            name: 'Marjo',
+            lastName: 'Ceca',
+            email: 'Marjo@test.com',
+            password: 'test',
+            role: Role.MEMBER,
+          },
+          {
+            id: 3,
+            name: 'Klaudio',
+            lastName: 'Bendaj',
+            email: 'igli@test.com',
+            password: 'test',
+            role: Role.ADMINISTRATOR,
+          },
+          {
+            id: 4,
+            name: 'Igli',
+            lastName: 'Maksuti',
+            email: 'igli@test.com',
+            password: 'test',
+            role: Role.MEMBER,
+          },
+        ];
+  
+      const tasks: Tasks = [
+        {
+          id: 1,
+          category: { name: 'Development' },
+          status: Status.IN_PROGRESS,
+          member: users[0],
+          date: new Date(),
+          description: 'Task description',
+          title: 'First task',
+        },
+        {
+          id: 2,
+          category: { name: 'Development' },
+          status: Status.TO_BE_DONE,
+          member: users[0],
+          date: new Date(),
+          description: 'Task description',
+          title: 'Second task',
+        },
+      ];
+  
+      localStorage.setItem(ProjectKey, JSON.stringify(projects));
+      localStorage.setItem(TasksKey, JSON.stringify(tasks));
+      localStorage.setItem(UsersKey, JSON.stringify(users));
+      localStorage.setItem('dummyDataLoaded', '1');
+    }
   }
 
   /**

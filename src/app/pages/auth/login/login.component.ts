@@ -8,16 +8,24 @@ import {ErrorStateMatcher} from '@angular/material/core';
 })
 export class LoginComponent implements OnInit {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+
   matcher = new MyErrorStateMatcher();
+
   passwordFormControl = new FormControl('',[Validators.required])
+
   public showPassword: boolean = false;
+
   constructor() { }
   ngOnInit(): void {
   }
+
   public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
+
 }
+
+
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
