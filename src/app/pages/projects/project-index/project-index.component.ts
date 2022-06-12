@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Status, StatusColors } from 'src/app/models/enum/status';
 import { ProjectService } from 'src/app/services/project.service';
 @Component({
   selector: 'app-created-project',
@@ -7,6 +8,19 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./project-index.component.scss']
 })
 export class ProjectIndexComponent implements OnInit {
+
+  // statuses = Status;
+
+  // getClass(status:any){
+  //   if(status === status.TO_BE_DONE)
+  //   return 'btn-red';
+  //   else if (status === status.IN_PROGRESS)
+  //   return 'btn-orange';
+  //   else if (status === status.COMPLETED)
+  //   return 'btn-green';
+  //   else return 'other';
+  // }
+
   projectService: ProjectService;
   projects:any;//: Projects;
 
@@ -15,7 +29,15 @@ export class ProjectIndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projects = this.projectService.all();
+    this.projects = this.projectService.all().map((p: any) => {
+      type ObjectColorKey = keyof typeof StatusColors;
+      let statusKey = Object.keys(Status)[Object.values(Status).indexOf(p.status)];
+
+      p.statusColor = StatusColors[statusKey as ObjectColorKey];
+
+      return p;
+
+    });
   }
 
 

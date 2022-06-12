@@ -3,4 +3,10 @@ export enum Status {
     IN_PROGRESS = 'In progress',
     COMPLETED = 'Completed',
 }
-  
+
+
+export enum StatusColors {
+    TO_BE_DONE = 'bg-yellow',
+    IN_PROGRESS = 'bg-orange',
+    COMPLETED = 'bg-green',
+}

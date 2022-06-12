@@ -19,13 +19,14 @@
           {{ project.title }}
         </mat-panel-title>
         <mat-panel-description class="col-10">
-            <button mat-raised-button color="accent" class="btn-status">{{ project.status }}</button>
+            <button
+            mat-raised-button color="accent" [ngClass]="['btn-status', project.statusColor]">{{ project.status }}</button>
         </mat-panel-description>
       </mat-expansion-panel-header>
       <!-- Project Description -->
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias doloribus tempora quisquam maxime repudiandae fugit odit omnis architecto minus quae vitae facilis soluta possimus eum, quibusdam quaerat cupiditate fuga eaque?</p>
+      <p>{{ project.description }}</p>
+      <!-- Team members -->
       <div *ngIf="project.members">
-        <!-- Team members -->
         <h3 class="fw-bold">Team Members</h3>
         <p *ngFor="let member of project.members">
         {{member.name}} {{member.lastName}}

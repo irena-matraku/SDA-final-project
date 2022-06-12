@@ -64,8 +64,8 @@ export class ProjectUpsertComponent implements OnInit {
     const selectedUser = this.users.find((u) => u.id === Number(this.userId));
     if(!selectedUser) return;
 
-    const newProject: Project = {
-      id: Date.now(),
+    const newProject: Project = {      
+      id: Math.max(...this.  projectService.all().map((t: any) => t.id))+1, // random ID
       title: this.name,
       description: this.description,
       members: [selectedUser],
